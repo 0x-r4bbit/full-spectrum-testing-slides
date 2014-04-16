@@ -37,6 +37,11 @@ article
   transition: background slide_transition_length slide_transition_easing
   display: none
   &.bespoke-parent
+    background: hsl(218, 63%, 18%)
+    background-image: url('http://codefront.io/public/images/sign@2x.png')
+    background-repeat: no-repeat
+    background-position: 125% -80%
+    background-size: auto 80%
     display: block
     position: absolute
     top: 0
@@ -50,6 +55,22 @@ article
     perspective: 600px
 
 .bespoke-slide
+  &.deck-slide
+    padding: 0
+    background: transparent
+    h1
+      text-align: left
+      font-size: 55px
+      font-weight: 200;
+      width: 100%
+      margin-top: 3em
+    p
+      text-align: left
+      width: 100%
+      margin-left: 0
+      margin-right: 0
+      font-weight: 200;
+      font-size: 16px
   transition:
     transform slide_transition_length slide_transition_easing,
     opacity slide_transition_length slide_transition_easing,
