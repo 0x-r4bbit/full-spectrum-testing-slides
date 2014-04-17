@@ -2,7 +2,7 @@
 
 // variables!
 
-slide_width = 640px
+slide_width = 800px
 slide_height = 480px
 slide_background = #eaeaea
 
@@ -32,16 +32,13 @@ bullet_transition_translate_x = 16px
   margin: 0
 
 // bespoke.js layout styles
-
 article
   transition: background slide_transition_length slide_transition_easing
   display: none
   &.bespoke-parent
-    background: hsl(218, 63%, 18%)
-    background-image: url('http://codefront.io/public/images/sign@2x.png')
-    background-repeat: no-repeat
-    background-position: 125% -80%
-    background-size: auto 80%
+    background: hsl(218, 63%, 15%) url('codefront-logo.png') no-repeat right -30% top -180%
+
+    background-size: auto 90%
     display: block
     position: absolute
     top: 0
@@ -58,19 +55,21 @@ article
   &.deck-slide
     padding: 0
     background: transparent
-    h1
-      text-align: left
-      font-size: 55px
-      font-weight: 200;
-      width: 100%
-      margin-top: 3em
+    h1,
     p
-      text-align: left
       width: 100%
+      font-weight: 200;
+      color: hsl(0, 0%, 90%)
+      text-align: left
+    h1
+      font-size: 55px
+      margin-top: 3em
+      margin-left: 0.8em
+    p
       margin-left: 0
       margin-right: 0
-      font-weight: 200;
       font-size: 16px
+      margin-left: 3em
   transition:
     transform slide_transition_length slide_transition_easing,
     opacity slide_transition_length slide_transition_easing,
@@ -188,15 +187,17 @@ h1
   line-height: 82px
   letter-spacing: -2px
   margin-bottom: 16px
+  font-weight: 200
 
 h2
   font-size: 42px
   letter-spacing: -1px
   margin-bottom: 8px
+  font-weight: 200
 
 h3
   font-size: 24px
-  font-weight: normal
+  font-weight: 200
   margin-bottom: 24px
   color: #606060
 
@@ -213,7 +214,17 @@ li
 p
   margin: 0 100px 12px
   line-height: 22px
+  font-weight: 200
 
 a
   color: #0089f3
   text-decoration: none
+
+.hashtag
+  position: absolute
+  right: 4em
+  bottom: 1em
+  z-index: 2
+  color: #888
+  font-size: 1.2em
+  font-weight: 200
