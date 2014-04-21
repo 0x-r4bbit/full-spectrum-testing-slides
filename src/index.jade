@@ -39,16 +39,53 @@ html
         img(class='unidog', src='styles/unidog.gif', data-bespoke-bullet)
 
       section(data-bespoke-fx-transition="scale-down-up")
-        h2 Why testing?
+        h2 Why testing (and why not)?
 
       section
-        h2 Problems with testing
+        h2(data-bespoke-bullet) Why people don't test
         
-        ul
-          li(data-bespoke-bullet) argument 1
-          li(data-bespoke-bullet) argument 2
-          li(data-bespoke-bullet) argument 3
+        ul(style='margin-top: 2em')
+          li(data-bespoke-bullet) Missing expertise (how to test? Which tools to use?)
+          li(data-bespoke-bullet) Takes too long (environment setup etc.)
+          li(data-bespoke-bullet) works-for-me™ (and without tests)
+          li(data-bespoke-bullet) ...
 
+      section
+        h2(data-bespoke-bullet) Why people should test
+
+        ul(style='margin-top: 2em')
+          li(data-bespoke-bullet) Verifies that system meets requirements (functional, performance, security etc.)
+          li(data-bespoke-bullet) Improves quality (code and product)
+          li(data-bespoke-bullet) Helps to *not* deploy bugs
+          li(data-bespoke-bullet) Makes debugging easier
+          li(data-bespoke-bullet) ...
+
+      section
+        h2 So what do we cover today?
+
+      section
+        h2(style='margin-bottom: 0.5em;') We inspire you with these
+        h3(style='width: 80%; text-align: left;') Unit Testing
+        ul(style='margin-top: .5em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) What and why
+          li(data-bespoke-bullet) Karma Testrunner
+          li(data-bespoke-bullet) Code samples
+
+        h3(style='margin-top: 1em; width: 80%; text-align: left;') E2E Testing
+        ul(style='margin-top: .5m; width: 70%')
+          li(data-bespoke-bullet) What and why
+          li(data-bespoke-bullet) Karma Testrunner
+          li(data-bespoke-bullet) Code samples
+
+      section
+        h3(data-bespoke-bullet) Ready to visit the land of milk and honey?
+        h2(data-bespoke-bullet) Let's go!
+
+      section
+        h1 Unit Testing
+
+      section
+        h1 E2E Testing
 
       section
         h2 Keyboard Interaction
