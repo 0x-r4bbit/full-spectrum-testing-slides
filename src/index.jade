@@ -4,12 +4,14 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     title Full Spectrum Testing
+    script(src='bower_components/modernizr/modernizr.js')
 
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
     link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
     link(rel='stylesheet', type='text/css', href='styles/main.css')
     // endbuild
+    <!-- link(rel='stylesheet', type='text/css', href='bower_components/bespoke-fx/src/animations.css') -->
 
   body
     span(class='hashtag') #codefront2014
@@ -19,9 +21,30 @@ html
         p By <a href="http://twitter.com/CarmenPopoviciu">@CarmenPopoviciu</a> and <a href="http://twitter.com/PascalPrecht">@PascalPrecht</a>
         p codefront.io - May 10, 2014
 
+      section(data-bespoke-fx-transition="scale-down-up", class='introduction')
+        h1(style='text-align: left; width: 100%; margin-left: 40px;', data-bespoke-bullet) Hi there.
+        h2(style='text-align: left; width: 100%; margin-left: 40px;', data-bespoke-bullet) We are...
+        figure(class='profile-carmen', data-bespoke-bullet)
+          img(src='https://pbs.twimg.com/profile_images/3465736275/e6c51a0587a7b57638dbbbda281fa90f.jpeg')
+          figcaption
+            @CarmenPopoviciu
+
+        figure(class='profile-pascal', data-bespoke-bullet)
+          img(src='https://pbs.twimg.com/profile_images/449147152036397057/u0bWmFuc.jpeg')
+          figcaption
+            @PascalPrecht
+
+      section(data-bespoke-fx-transition="scale-down-up")
+        h2 Why testing?
+
       section
-        h1(style='text-align: left; width: 100%; margin-left: 40px;') Hi there.
-        h2(style='text-align: left; width: 100%; margin-left: 40px;') We are Carmen and Pascal
+        h2 Problems with testing
+        
+        ul
+          li(data-bespoke-bullet) argument 1
+          li(data-bespoke-bullet) argument 2
+          li(data-bespoke-bullet) argument 3
+
 
       section
         h2 Keyboard Interaction
