@@ -94,9 +94,72 @@ html
         h3(data-bespoke-bullet) Ready to visit the land of milk and honey?
         h2(data-bespoke-bullet) Let's go!
 
+      // UNIT TESTING SECTION ------------------------------------------------------------------------------
       section
         h1 Unit Testing
         img(src='styles/karma-logo.png')
+
+
+      section
+        h3(style='margin-top: 1em; width: 80%; text-align: left;') What
+        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) isolate individual units of code under test
+
+        h3(style='margin-top: 1em; width: 80%; text-align: left;', data-bespoke-bullet) Why
+        ul(style='margin-top: .5m; width: 70%')
+          li(data-bespoke-bullet) reliable components
+          li(data-bespoke-bullet) sleep better at night
+
+        h3(style='margin-top: 1em; width: 80%; text-align: left;', data-bespoke-bullet) When
+        ul(style='margin-top: .5m; width: 70%')
+          li(data-bespoke-bullet) while the 'units' are being developed
+
+
+      section
+        h2 Tools
+
+        h3(data-bespoke-bullet) JS testing framework
+        ul
+          li(data-bespoke-bullet) Jasmine, Mocha, QUnit
+
+        h3(data-bespoke-bullet) ngMock??
+
+        h3(data-bespoke-bullet) Test runner
+        ul
+          li(data-bespoke-bullet) Karma
+
+
+      section
+        h2 Jasmine
+        p(data-bespoke-bullet) Jasmine is a behavior-driven development framework for testing JavaScript code
+        p(data-bespoke-bullet) suites, specs and expectations
+        pre(data-bespoke-bullet)
+          code.language-javascript.
+              describe("A suite", function() {
+                 it("contains spec with an expectation", function() {
+                   expect(true).toBe(true);
+                 });
+               });
+
+
+      section
+        h2 ngMock
+        p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
+        p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
+
+
+      section
+        h2 Karma
+
+
+      section
+        h2 Karma
+
+
+      section
+        h2 Example
+
+      // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
       <!-- section(class='e2e-deck-slide', style='background-image: url(styles/protractor-logo-icon.png)') -->
       section
