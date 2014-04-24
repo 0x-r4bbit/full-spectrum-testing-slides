@@ -36,15 +36,23 @@ html
 
       section
         p(data-bespoke-bullet, style='font-size: 3em; line-height: 1.2') We have 40 min to cover full spectrum testing
-        img(class='unidog', src='styles/unidog.gif', data-bespoke-bullet)
+        div(class='unidog', data-bespoke-bullet)
+          img(src='styles/unidog.gif')
+          h4(style='position: absolute; font-size: 3em; color: #fff; top: 0; left: 3.5em; text-shadow: 0px 2px 3px hsl(0, 0%, 0%);') YAY...
+
+      section
+        p(style='color: maroon; font-size: 2em; line-height: 1.2', data-bespoke-bullet) No, this is bad :( There's too much to cover.
+        p(style='color: green; font-size: 2em; margin-top: 0.5em;', data-bespoke-bullet) But we can inspire you! :)
+        img(class='mind-blown', src='styles/mind-blown.gif', data-bespoke-bullet)
+        img(class='mind-blown2', src='styles/mind-blown2.gif', data-bespoke-bullet)
 
       section(data-bespoke-fx-transition="scale-down-up")
-        h2 Why testing (and why not)?
+        h1 Testing?
 
       section
         h2(data-bespoke-bullet) Why people don't test
         
-        ul(style='margin-top: 2em')
+        ul(style='margin-top: 2em; width: 60%;')
           li(data-bespoke-bullet) Missing expertise (how to test? Which tools to use?)
           li(data-bespoke-bullet) Takes too long (environment setup etc.)
           li(data-bespoke-bullet) works-for-me™ (and without tests)
@@ -53,7 +61,7 @@ html
       section
         h2(data-bespoke-bullet) Why people should test
 
-        ul(style='margin-top: 2em')
+        ul(style='margin-top: 2em; width: 60%;')
           li(data-bespoke-bullet) Verifies that system meets requirements (functional, performance, security etc.)
           li(data-bespoke-bullet) Improves quality (code and product)
           li(data-bespoke-bullet) Helps to *not* deploy bugs
