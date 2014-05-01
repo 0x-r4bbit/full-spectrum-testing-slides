@@ -101,32 +101,69 @@ html
 
 
       section
-        h3(style='margin-top: 1em; width: 80%; text-align: left;') What
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') What
         ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet) isolate individual units of code under test
-
-        h3(style='margin-top: 1em; width: 80%; text-align: left;', data-bespoke-bullet) Why
-        ul(style='margin-top: .5m; width: 70%')
-          li(data-bespoke-bullet) reliable components
-          li(data-bespoke-bullet) sleep better at night
-
-        h3(style='margin-top: 1em; width: 80%; text-align: left;', data-bespoke-bullet) When
-        ul(style='margin-top: .5m; width: 70%')
-          li(data-bespoke-bullet) while the 'units' are being developed
+          li(data-bespoke-bullet) a.k.a. instantiate the unit standalone, without the rest of the system
+          li(data-bespoke-bullet) uses mocking strategies: providing a fake object or method for the target code to interact with
 
 
       section
-        h2 Tools
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') Why
+        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) measurable proof that your code is correct
+          li(data-bespoke-bullet) safer refactoring
+          li(data-bespoke-bullet) reliable components
+          li(data-bespoke-bullet) write better code: reusable, loosely coupled and maintainable
+          li(style='font-weight: bold;', data-bespoke-bullet) sleep better at night
 
-        h3(data-bespoke-bullet) JS testing framework
-        ul
-          li(data-bespoke-bullet) Jasmine, Mocha, QUnit
 
-        h3(data-bespoke-bullet) ngMock??
+      section
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') When
+        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) before or while the 'units' are being developed
 
-        h3(data-bespoke-bullet) Test runner
-        ul
-          li(data-bespoke-bullet) Karma
+
+      section
+        h3 Tools
+        img(src='styles/karma-funny.png', data-bespoke-bullet)
+        h2(data-bespoke-bullet) Karma
+
+
+      section
+        h2 Karma
+        p(data-bespoke-bullet) test runner, that makes automated testing simpler and faster ...
+        p(data-bespoke-bullet) ... as in ... VERY fast!
+
+
+      section
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') Context
+        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet)
+            span(style='font-weight: bold') Selenium | WebDriver / Selenium 2
+            span : suitable for e2e
+          li(data-bespoke-bullet)
+            span(style='font-weight: bold') Testing frameworks (Jasmine, QUnit)
+            span : HTML runners
+          li(data-bespoke-bullet)
+            span(style='font-weight: bold') JsTestDriver
+            span : slow and unreliable
+
+
+      section
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') Goals
+        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) Testing on Real Browsers
+          li(data-bespoke-bullet) Remote Control
+          li(data-bespoke-bullet) Speed
+          li(data-bespoke-bullet) Integration with IDEs and text editors
+          li(data-bespoke-bullet) Integration with CI Servers
+          li(data-bespoke-bullet) Extensibility
+          li(data-bespoke-bullet) Debugging
+
+
+      section
+        h2(style='margin-top: 1em; width: 80%; text-align: left;') Design
 
 
       section
@@ -144,20 +181,12 @@ html
 
       section
         h2 ngMock
-        p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
-        p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
+          p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
+          p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
 
 
       section
-        h2 Karma
-
-
-      section
-        h2 Karma
-
-
-      section
-        h2 Example
+      h2 Example
 
       // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
