@@ -77,13 +77,14 @@ html
         ul(style='margin-top: .5em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet) What and why
           li(data-bespoke-bullet) Karma Testrunner
-          li(data-bespoke-bullet) Code samples
+          li(data-bespoke-bullet) Jasmine as a DSL
 
         h3(style='margin-top: 1em; width: 80%; text-align: left;') E2E Testing
         ul(style='margin-top: .5m; width: 70%')
           li(data-bespoke-bullet) What and why
           li(data-bespoke-bullet) Protractor
-          li(data-bespoke-bullet) Writing tests
+          li(data-bespoke-bullet) Debugging
+          li(data-bespoke-bullet) PageObjects
 
       section
         h3 So next time you deploy an app, you don't feel like this...
@@ -170,7 +171,38 @@ html
 
 
       section
-        h2 Design
+        h2 Demo
+
+      section
+        h2 Configuration
+        pre(style='margin-top: 1em', data-bespoke-bullet)
+          code.language-javascript.
+            module.exports = function(config) {
+              config.set({
+                basePath: '../..',
+                frameworks: ['jasmine'],
+                //...
+              });
+            };
+
+      section
+        h2 Further configuration options
+        table
+          tr
+            th Name
+            th Meaning
+          tr
+            td foo
+            td bar
+          tr
+            td foo
+            td bar
+          tr
+            td foo
+            td bar
+          tr
+            td foo
+            td bar
 
       section
         img(src='http://jasmine.github.io/images/jasmine_vertical.svg')
@@ -187,6 +219,13 @@ html
                  });
                });
 
+      section
+        h2 Jasmine sample code
+        p iit(), xit() ?
+
+      section
+        h2 Jasmine sample code
+        p ddescribe(), xdescribe()?
 
       section
         h2 ngMock
@@ -194,7 +233,13 @@ html
         p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
 
       section
-        h2 Example
+        h2 Another demo
+        
+      section
+        h2 So much #moar!
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) debugger statement
+          li(data-bespoke-bullet) running tests in other browsers
 
       // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
@@ -205,64 +250,67 @@ html
 
       section
         h2(data-bespoke-bullet) E2E Tests?
-        p(data-bespoke-bullet, style='margin-top: 2em; font-size: 1.3em; line-height: 1.2;') Test whether the flow of an application is performing as designed from start to finish.
-
-
-      section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+        p(data-bespoke-bullet, style='margin-top: 1em; font-size: 1.3em; line-height: 1.2;') Test whether the flow of an application is performing as designed from start to finish.
 
       section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
+        h2 Why?
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) arg1
+          li(data-bespoke-bullet) arg2
+          li(data-bespoke-bullet) arg3
 
       section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
+        h2 When?
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) arg1
+          li(data-bespoke-bullet) arg2
+          li(data-bespoke-bullet) arg3
 
       section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
-        ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
+        img(src='styles/protractor-logo-large.png', style='width: 60%;')
 
       section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        hr
-        pre
-          code.language-javascript.
-            bespoke.from('article', {
-              keys: true,
-              touch: true,
-              hash: true,
-              state: true,
-              bullets: 'li, .bullet'
-            });
-
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
-
-      section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+        h2 Protractor?
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) E2E Testing Framework
+          li(data-bespoke-bullet) Introduced during AngularJS 1.2
+          li(data-bespoke-bullet) Replaced ng-scenario
 
       section
-        h2.bullet Just the beginning...
-        hr
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        hr
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+        h2 So what's the difference? 
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
+          li(data-bespoke-bullet) Built on top of WebdriverJS and Selenium
+          li(data-bespoke-bullet) Syntactic Sugar for Angular apps (Locator Strategies)
+          li(data-bespoke-bullet) Is able to run tests on a remote server
+          li(data-bespoke-bullet) Run tests in different browsers
+
+      section
+        h2 Demo
+
+      section
+        h2 Configuration
+
+      section
+        h2 Locator Strategies
+
+      section
+        h2 Control Flow
+
+      section
+        h2 File Explorer
+
+      section
+        h2 Demo
+
+      section
+        h2 Recap!
+
+      section(class='deck-slide')
+        h1(style='margin-top: 2em') Thanks!
+        h1(style='margin-top: 0em') Full Spectrum Testing
+        p By <a href="http://twitter.com/CarmenPopoviciu">@CarmenPopoviciu</a> and <a href="http://twitter.com/PascalPrecht">@PascalPrecht</a>
+        p codefront.io - May 10, 2014
+
 
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
