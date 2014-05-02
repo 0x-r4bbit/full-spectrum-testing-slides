@@ -86,7 +86,12 @@ html
           li(data-bespoke-bullet) Writing tests
 
       section
-        h3 So next time you have to write tests, you feel like this...
+        h3 So next time you deploy an app, you don't feel like this...
+
+      section(style='background-image: url(http://gifs.joelglovier.com/accidents/sweeper-fail.gif); background-repeat: no-repeat; background-size: 100% 100%;')
+
+      section
+        h3 But rather like this...
 
       section(style='background-image: url(http://gifs.joelglovier.com/smooth/smooth.gif); background-repeat: no-repeat; background-size: 100% 100%;')
 
@@ -101,16 +106,16 @@ html
 
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') What
-        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+        h2(style='width: 80%;') Unit Testing?
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet) isolate individual units of code under test
           li(data-bespoke-bullet) a.k.a. instantiate the unit standalone, without the rest of the system
           li(data-bespoke-bullet) uses mocking strategies: providing a fake object or method for the target code to interact with
 
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') Why
-        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+        h2(style='width: 80%;') Why?
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet) measurable proof that your code is correct
           li(data-bespoke-bullet) safer refactoring
           li(data-bespoke-bullet) reliable components
@@ -119,26 +124,28 @@ html
 
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') When
-        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) before or while the 'units' are being developed
+        h2(style='width: 80%;', data-bespoke-bullet) When?
+        p(style='font-size: 1.2em; margin-top: 1em;', data-bespoke-bullet) Before or while the 'units' are being developed.
 
 
       section
         h3 Tools
         img(src='styles/karma-funny.png', data-bespoke-bullet)
-        h2(data-bespoke-bullet) Karma
 
 
       section
-        h2 Karma
-        p(data-bespoke-bullet) test runner, that makes automated testing simpler and faster ...
-        p(data-bespoke-bullet) ... as in ... VERY fast!
-
+        img(src='styles/karma-logo.svg', style='width: 50%;')
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') Context
-        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+        p(style='font-size: 1.4em; line-height: 1.2; margin-top: 1em;', data-bespoke-bullet) Karma is a test runner, that makes automated testing simpler and faster ...
+        div(class='fast', data-bespoke-bullet)
+          figure
+            img(src='http://31.media.tumblr.com/tumblr_luqskuGhSF1r6aoq4o1_500.gif')
+            figcaption as in VERY fast!
+
+      section
+        h2 Context
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet)
             span(style='font-weight: bold') Selenium | WebDriver / Selenium 2
             span : suitable for e2e
@@ -151,8 +158,8 @@ html
 
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') Goals
-        ul(style='margin-top: .5m; width: 70%', data-bespoke-bullet)
+        h2 Goals
+        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet) Testing on Real Browsers
           li(data-bespoke-bullet) Remote Control
           li(data-bespoke-bullet) Speed
@@ -163,8 +170,10 @@ html
 
 
       section
-        h2(style='margin-top: 1em; width: 80%; text-align: left;') Design
+        h2 Design
 
+      section
+        img(src='http://jasmine.github.io/images/jasmine_vertical.svg')
 
       section
         h2 Jasmine
@@ -181,12 +190,11 @@ html
 
       section
         h2 ngMock
-          p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
-          p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
-
+        p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
+        p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
 
       section
-      h2 Example
+        h2 Example
 
       // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
