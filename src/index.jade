@@ -41,9 +41,8 @@ html
           h4(style='position: absolute; font-size: 3em; color: #fff; top: 0; left: 3.5em; text-shadow: 0px 2px 3px hsl(0, 0%, 0%);') YAY...
 
       section
-        p(style='color: maroon; font-size: 2em; line-height: 1.2', data-bespoke-bullet) No, this is bad :( There's too much to cover.
+        p(style='color: maroon; font-size: 2em; line-height: 1.2', data-bespoke-bullet) Unfortunately there's too much to cover. :(
         p(style='color: green; font-size: 2em; margin-top: 0.5em;', data-bespoke-bullet) But we can inspire you! :)
-        img(class='mind-blown', src='styles/mind-blown.gif', data-bespoke-bullet)
         img(class='mind-blown2', src='styles/mind-blown2.gif', data-bespoke-bullet)
 
       section(style='background-image: url(http://24.media.tumblr.com/tumblr_m83tks6Fjr1rys4czo1_500.gif); background-repeat: no-repeat; background-size: 100% 100%;', data-bespoke-fx-transition="scale-down-up")
@@ -53,8 +52,8 @@ html
         h2(data-bespoke-bullet) Why people don't test
         
         ul(style='margin-top: 2em; width: 60%;')
-          li(data-bespoke-bullet) Missing expertise (how to test? Which tools to use?)
           li(data-bespoke-bullet) Takes too long (environment setup etc.)
+          li(data-bespoke-bullet) Missing expertise (how to test? Which tools to use?)
           li(data-bespoke-bullet) works-for-me™ (and without tests)
           li(data-bespoke-bullet) ...
 
@@ -69,6 +68,9 @@ html
           li(data-bespoke-bullet) ...
 
       section
+        h2 Testable Code VS. Test Code
+
+      section
         h2 So what do we cover today?
 
       section
@@ -81,8 +83,8 @@ html
         h3(style='margin-top: 1em; width: 80%; text-align: left;') E2E Testing
         ul(style='margin-top: .5m; width: 70%')
           li(data-bespoke-bullet) Protractor
-          li(data-bespoke-bullet) Debugging
           li(data-bespoke-bullet) PageObjects
+          li(data-bespoke-bullet) Debugging
 
       section
         h3 So next time you deploy an app, you don't feel like this...
@@ -101,7 +103,7 @@ html
       // UNIT TESTING SECTION ------------------------------------------------------------------------------
       section
         h1 Unit Testing
-        img(src='styles/karma-logo.png')
+        <!-- img(src='styles/karma-logo.png') -->
 
 
       section
@@ -128,7 +130,7 @@ html
 
 
       section
-        h3(data-bespoke-bullet) Tools
+        h2(data-bespoke-bullet) Tools
         img(src='styles/karma-funny.png', data-bespoke-bullet)
 
 
@@ -186,23 +188,38 @@ html
             };
 
       section
-        h2 Further configuration options
-        table
+        h2 More options
+        table(class='karma-opts')
           tr
             th Name
             th Meaning
           tr
-            td foo
-            td bar
+            td 
+              code exclude
+            td File patterns to exclude
           tr
-            td foo
-            td bar
+            td 
+              code files
+            td List of files to load
           tr
-            td foo
-            td bar
+            td
+              code hostname
+            td Hostname
           tr
-            td foo
-            td bar
+            td
+              code logLevel
+            td Level of logging
+          tr
+            td
+              code plugins
+            td List of plugins to load
+          tr
+            td
+              code proxies
+            td A map of proxy-pairs
+          tr
+            td ...
+            td ...
 
       section
         img(src='http://jasmine.github.io/images/jasmine_vertical.svg')
@@ -222,17 +239,11 @@ html
       section
         h2 ngMock
         p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
-        p(data-bespoke-bullet) angular.mock.module, angular.mock.inject, $httpBackend
+        p(data-bespoke-bullet) <b>angular.mock.module, angular.mock.inject, $httpBackend</b>
 
       section
-        h2 Another demo
+        h2 Demo
         
-      section
-        h2 So much #moar!
-        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) debugger statement
-          li(data-bespoke-bullet) running tests in other browsers
-
       // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
       <!-- section(class='e2e-deck-slide', style='background-image: url(styles/protractor-logo-icon.png)') -->
