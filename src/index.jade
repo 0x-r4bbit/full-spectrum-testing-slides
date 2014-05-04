@@ -311,21 +311,160 @@ html
       section
         h2 Demo
 
+      section
+        h2(data-bespoke-bullet) Writing tests (WebdriverJS)
+        pre(style='margin-top: 1em; font-size: 0.8em;', data-bespoke-bullet)
+          code.language-javascript.
+            var wd = require('selenium-webdriver');
+
+            var driver = new wd.Builder()
+              .withCapabilities(wd.Capabilities.chrome())
+              .build();
+
+            driver.get('some/url').then(function () {
+            driver.findElement(wd.By.name('foo')).sendKeys('webdriver');
+            driver.findElement(wd.By.name('btn')).click();
+            driver.sleep(400);
+            driver.getTitle().then(function (title) {
+              // do something
+            });
+
+      section
+        h2(data-bespoke-bullet) Wait!
+        div(data-bespoke-bullet)
+          img(src='https://raw.githubusercontent.com/PascalPrecht/slides/master/hands-on-polymer/img/wait.gif', style='width: 60%;')
+          p(style='font-size: 1.3em; margin-top: 0.5em;') Everything returns a promise, right?
+
+      section
+        h2(data-bespoke-bullet) Shouldn't my code look like this?
+        pre(style='margin-top: 1em; font-size: 0.8em;', data-bespoke-bullet)
+          code.language-javascript.
+            var wd = require('selenium-webdriver');
+
+            var driver = new wd.Builder()
+              .withCapabilities(wd.Capabilities.chrome())
+              .build();
+
+            driver.get('some/url').then(function () {
+              driver.findElement(wd.By.name('foo')).then(function (element) {
+                element.sendKeys('webdriver').then(function () {
+                  driver.findElement(wd.By.name('btn')).then(
+                    function (element2) {
+                      element2.click();
+                      // ...
+
+      section
+        h2 Webdriver handles control flow!
+        pre(style='margin-top: 1em; font-size: 0.8em;')
+          code.language-javascript.
+            var wd = require('selenium-webdriver');
+
+            var driver = new wd.Builder()
+              .withCapabilities(wd.Capabilities.chrome())
+              .build();
+
+            driver.get('some/url').then(function () {
+            driver.findElement(wd.By.name('foo')).sendKeys('webdriver');
+            driver.findElement(wd.By.name('btn')).click();
+            driver.sleep(400);
+            driver.getTitle().then(function (title) {
+              // do something
+            });
+
+      section
+        h2(data-bespoke-bullet) Writing tests (Protractor/Jasmine)
+        pre(style='margin-top: 1em; font-size: 0.8em;', data-bespoke-bullet)
+          code.language-javascript.
+            describe('something', function () {
+
+              beforeEach(function () {
+                browser.get('some/url');
+              });
+
+              it('should do something', function () {
+                var foo = element(by.className('foo');
+                expect(foo.isDisplayed()).toBe(true);
+              });
+
+              it('should do something', function () {
+                element(by.input('search').sendKeys('bar');
+                element(by.buttonText('submit'));
+                expect(element(by.className('search-result')).isDisplayed())
+                  .toBe(true);
+              });
+            });
 
       section
         h2 Locator Strategies
 
-      section
-        h2 Control Flow
+        table(class='locator-strategies')
+          tr
+            td
+                code &lt;span&gt;{{yourName}}&lt;/span&gt;
+            td
+              code element(by.binding('yourName'));
+          tr
+            td
+                code &lt;input ng-model="password"&gt;
+            td
+              code element(by.input('password'));
+          tr
+            td
+                code
+                  &lt;tr ng-repeat="foo in foos"&gt;
+            td
+              code.
+                element(by.repeater('foo in foos'))
+                  .row(1)
+
+          tr
+            td 
+
+            td
+                code.
+                  element.by(repeater('foo in foos'))
+                    .column('foo.bar');
+
 
       section
-        h2 File Explorer
+        h1 Debugging
+
+      section
+        h2(data-bespoke-bullet) Pausing to debug
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            it("contains spec with an expectation", function() {
+              browser.get('some/url');
+
+              browser.debugger();
+
+              expect(testWillFail).toBe(true);
+            });
+
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            $ protractor debug protractor.conf.js
+
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            window.clientSideScripts.findInputs('username');
+
+      section
+        h2(data-bespoke-bullet) Interactive file explorer
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            $ ./bin/elementexplorer.js my-web-app.com
+
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            &gt; element(by.id('foobar')).getText()
+
+        pre(data-bespoke-bullet, style='font-size: 0.8em;')
+          code.language-javascript.
+            &gt; browser.get('http://codefront.io')
 
       section
         h2 Demo
-
-      section
-        h2 Recap!
 
       section(class='deck-slide')
         h1(style='margin-top: 2em') Thanks!
