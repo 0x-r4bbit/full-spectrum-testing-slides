@@ -249,49 +249,72 @@ html
       <!-- section(class='e2e-deck-slide', style='background-image: url(styles/protractor-logo-icon.png)') -->
       section
         h1 E2E Testing
-        img(src='styles/protractor-logo-icon.png')
+        <!-- img(src='styles/protractor-logo-icon.png') -->
+
+      section
+        img(src='styles/no-e2e.png', style='width: 80%')
 
       section
         h2(data-bespoke-bullet) What?
-        p(data-bespoke-bullet, style='margin-top: 1em; font-size: 1.3em; line-height: 1.2;') Test whether the flow of an application is performing as designed from start to finish.
+        ul(style='margin-top: 1em; width: 70%')
+          li(data-bespoke-bullet) Ensures pieces work together
+          li(data-bespoke-bullet) Checks if app performs as designed from start to finish
+          li(data-bespoke-bullet) tests user interaction/usability
+
+        <!-- p(data-bespoke-bullet, style='margin-top: 1em; font-size: 1.3em; line-height: 1.2;') Test whether the flow of an application is performing as designed from start to finish. -->
 
       section
-        h2 Why?
-        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) arg1
-          li(data-bespoke-bullet) arg2
-          li(data-bespoke-bullet) arg3
+        h2(data-bespoke-bullet) Why?
+        p(style='font-size: 1.2em; margin-top: 1em;', data-bespoke-bullet) Imagine you have to the following things by hand to test your app:
+        ul(style='margin-top: 1em; width: 70%')
+          li(data-bespoke-bullet) Click every link in your app
+          li(data-bespoke-bullet) Check if form validation works
+          li(data-bespoke-bullet) Count items in your search result you get when using the search bar
+          li(data-bespoke-bullet) ...
+
+      section(style='background-image: url(http://stubbornthoughts.files.wordpress.com/2014/03/fqwaa.gif); background-repeat: no-repeat; background-size: 100% 100%')
 
       section
         h2 When?
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) arg1
-          li(data-bespoke-bullet) arg2
-          li(data-bespoke-bullet) arg3
+          li(data-bespoke-bullet) Once components are unit tested
+          li(data-bespoke-bullet) Before app deploy (in different browsers)
 
       section
         img(src='styles/protractor-logo-large.png', style='width: 60%;')
 
       section
-        h2 Protractor?
-        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) E2E Testing Framework
-          li(data-bespoke-bullet) Introduced during AngularJS 1.2
-          li(data-bespoke-bullet) Replaced ng-scenario
+        p(style='font-size: 1.4em; line-height: 1.3') <b>Protractor</b> is an E2E testing framework built on top of Webdriver to <b>make E2E testing</b> for Angular applications <b>more fun</b>.
+
+        <!-- h2 Protractor? -->
+        <!-- ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet) -->
+        <!--   li(data-bespoke-bullet) E2E Testing Framework -->
+        <!--   li(data-bespoke-bullet) Introduced during AngularJS 1.2 -->
+        <!--   li(data-bespoke-bullet) Replaced ng-scenario -->
 
       section
-        h2 So what's the difference? 
+        h2 Key features
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) Built on top of WebdriverJS and Selenium
-          li(data-bespoke-bullet) Syntactic Sugar for Angular apps (Locator Strategies)
-          li(data-bespoke-bullet) Is able to run tests on a remote server
+          li(data-bespoke-bullet) Built on top of Webdriver
+          li(data-bespoke-bullet) Syntactic Sugar for Angular apps (<b>Locator Strategies</b>)
+          li(data-bespoke-bullet) Is able to run tests on a remote (Selenium) server
           li(data-bespoke-bullet) Run tests in different browsers
+      
+      section
+        h2 Why not just Webdriver?
+        p(style='font-size: 1.2em; margin-top: 1em;', data-bespoke-bullet) AngularJS gives structure to an app your runner can use:
+        ul(style='margin-top: 1em; width: 70%')
+          li(data-bespoke-bullet) Custom attributes and elements
+          li(data-bespoke-bullet) Dependency Injection
+          li(data-bespoke-bullet) Asynchronous execution (e.g. <code>$http</code>, <code>$timeout</code>)
+
+      section
+        h2(data-bespoke-bullet) Design
+        img(data-bespoke-bullet, src='styles/protractor-design.png', style='width: 70%;')
 
       section
         h2 Demo
 
-      section
-        h2 Configuration
 
       section
         h2 Locator Strategies
