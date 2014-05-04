@@ -103,7 +103,6 @@ html
       // UNIT TESTING SECTION ------------------------------------------------------------------------------
       section
         h1 Unit Testing
-        <!-- img(src='styles/karma-logo.png') -->
 
 
       section
@@ -146,7 +145,7 @@ html
 
 
       section
-        h2 Context
+        h2 Pre-Karma Solutions
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
           li(data-bespoke-bullet)
             span(style='font-weight: bold') Selenium | WebDriver / Selenium 2
@@ -162,19 +161,41 @@ html
       section
         h2 Goals
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) Testing on Real Browsers
-          li(data-bespoke-bullet) Remote Control
+          li(data-bespoke-bullet) Testing on real browsers
+          li(data-bespoke-bullet) Remote control
           li(data-bespoke-bullet) Speed
           li(data-bespoke-bullet) Integration with IDEs and text editors
-          li(data-bespoke-bullet) Integration with CI Servers
+          li(data-bespoke-bullet) Integration with CI servers
           li(data-bespoke-bullet) Extensibility
           li(data-bespoke-bullet) Debugging
 
       section
-        h2 Design
+        h2(data-bespoke-bullet) Design
+        p(data-bespoke-bullet) <b>client-server</b> architecture with a bi-directional communication channel between the client and the server
+        img(src="styles/karma-architecture.png", data-bespoke-bullet)
+
+
+      section
+        h3(style="text-align: left;") <b>The server</b> is the master part of the system and runs on Node.js on the local machine
+        ul(style="width: 80%;", data-bespoke-bullet)
+          li(data-bespoke-bullet) watching files
+          li(data-bespoke-bullet) communication with captured clients
+          li(data-bespoke-bullet) reporting test results to the developer
+          li(data-bespoke-bullet) serving all the client code
+
+
+      section
+        h3(style="text-align: left;") <b>The client</b> is the place where all the tests are actually executed
+        ul(style="width: 80%;", data-bespoke-bullet)
+          li(data-bespoke-bullet) typically a web browser, a computer, TV, tablet, etc.
+          li(data-bespoke-bullet) runs on the same machine as the server or anywhere else provided that it has access to the server through HTTP
+          li(data-bespoke-bullet) communicates with the server through socket.io
+          li(data-bespoke-bullet) executes the tests in an iframe
+
 
       section
         h2 Demo
+
 
       section
         h2 Configuration
@@ -183,44 +204,18 @@ html
             module.exports = function(config) {
               config.set({
                 basePath: '../..',
+                files: [
+                    'app/scripts/**/*.js',
+                    'test/unit/*.spec.js'
+                ],
+                exclude: [],
+                port: 1234,
                 frameworks: ['jasmine'],
-                //...
+                autowatch: true,
+                browsers: ['Chrome', 'Safari', 'Firefox']
               });
             };
 
-      section
-        h2 More options
-        table(class='karma-opts')
-          tr
-            th Name
-            th Meaning
-          tr
-            td 
-              code exclude
-            td File patterns to exclude
-          tr
-            td 
-              code files
-            td List of files to load
-          tr
-            td
-              code hostname
-            td Hostname
-          tr
-            td
-              code logLevel
-            td Level of logging
-          tr
-            td
-              code plugins
-            td List of plugins to load
-          tr
-            td
-              code proxies
-            td A map of proxy-pairs
-          tr
-            td ...
-            td ...
 
       section
         img(src='http://jasmine.github.io/images/jasmine_vertical.svg')
