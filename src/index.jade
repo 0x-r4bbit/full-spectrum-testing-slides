@@ -68,7 +68,13 @@ html
           li(data-bespoke-bullet) ...
 
       section
-        h2 Testable Code VS. Test Code
+        h2 Testing Code vs. Testable Code
+        ul(style="margin-top: 2em; width: 72%", data-bespoke-bullet)
+          li(data-bespoke-bullet) loosely coupled code with explicit dependencies
+          li(data-bespoke-bullet) better separation of concerns
+          li(data-bespoke-bullet) the single responsibility principle
+          li(data-bespoke-bullet) reusable code
+          li(data-bespoke-bullet) better design
 
       section
         h2 So what do we cover today?
@@ -160,14 +166,15 @@ html
 
       section
         h2 Goals
-        ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) Testing on real browsers
-          li(data-bespoke-bullet) Remote control
-          li(data-bespoke-bullet) Speed
-          li(data-bespoke-bullet) Integration with IDEs and text editors
-          li(data-bespoke-bullet) Integration with CI servers
-          li(data-bespoke-bullet) Extensibility
-          li(data-bespoke-bullet) Debugging
+        div(style='width: 70%;', data-bespoke-bullet)
+          ul(style='margin-top: 1em; width: 100%;', data-bespoke-bullet)
+            li Testing on real browsers
+            li Remote control
+            li Speed
+            li Integration with IDEs and text editors
+            li Integration with CI servers
+            li Extensibility
+            li Debugging
 
       section
         h2(data-bespoke-bullet) Design
@@ -188,7 +195,7 @@ html
         h3(style="text-align: left;") <b>The client</b> is the place where all the tests are actually executed
         ul(style="width: 80%;", data-bespoke-bullet)
           li(data-bespoke-bullet) typically a web browser, a computer, TV, tablet, etc.
-          li(data-bespoke-bullet) runs on the same machine as the server or anywhere else provided that it has access to the server through HTTP
+          li(data-bespoke-bullet) runs on the same machine as the server or anything that has HTTP access to the server
           li(data-bespoke-bullet) communicates with the server through socket.io
           li(data-bespoke-bullet) executes the tests in an iframe
 
@@ -199,7 +206,7 @@ html
 
       section
         h2 Configuration
-        pre(style='margin-top: 1em', data-bespoke-bullet)
+        pre(style='margin-top: 1em; font-size: 14px;', data-bespoke-bullet)
           code.language-javascript.
             module.exports = function(config) {
               config.set({
@@ -211,20 +218,17 @@ html
                 exclude: [],
                 port: 1234,
                 frameworks: ['jasmine'],
-                autowatch: true,
+                autoWatch: true,
                 browsers: ['Chrome', 'Safari', 'Firefox']
               });
             };
 
 
       section
-        img(src='http://jasmine.github.io/images/jasmine_vertical.svg')
-
-      section
-        h2 Jasmine
-        p(data-bespoke-bullet) Jasmine is a behavior-driven development framework for testing JavaScript code
+        img(src='http://jasmine.github.io/images/jasmine_vertical.svg', style="height: 135px; width: 100px; margin-top: -30px;", data-bespoke-bullet)
+        p(data-bespoke-bullet) behavior-driven development framework for testing JavaScript code
         p(data-bespoke-bullet) suites, specs and expectations
-        pre(data-bespoke-bullet)
+        pre(data-bespoke-bullet, style="font-size: 14px;")
           code.language-javascript.
               describe("A suite", function() {
                  it("contains spec with an expectation", function() {
