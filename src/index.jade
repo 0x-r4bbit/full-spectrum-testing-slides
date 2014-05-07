@@ -68,15 +68,6 @@ html
           li(data-bespoke-bullet) ...
 
       section
-        h2 Testing Code vs. Testable Code
-        ul(style="margin-top: 2em; width: 72%", data-bespoke-bullet)
-          li(data-bespoke-bullet) loosely coupled code with explicit dependencies
-          li(data-bespoke-bullet) better separation of concerns
-          li(data-bespoke-bullet) the single responsibility principle
-          li(data-bespoke-bullet) reusable code
-          li(data-bespoke-bullet) better design
-
-      section
         h2 So what do we cover today?
 
       section
@@ -114,19 +105,20 @@ html
       section
         h2(style='width: 80%;') What?
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) isolate individual units of code under test
-          li(data-bespoke-bullet) a.k.a. instantiate the unit standalone, without the rest of the system
-          li(data-bespoke-bullet) uses mocking strategies: providing a fake object or method for the target code to interact with
+          li(data-bespoke-bullet) Isolate individual units of code under test
+          li(data-bespoke-bullet) A.k.a. instantiate the unit standalone, without the rest of the system
+          li(data-bespoke-bullet) Uses mocking strategies: providing a fake object or method for the target code to interact with
 
 
       section
         h2(style='width: 80%;') Why?
         ul(style='margin-top: 1em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) measurable proof that your code is correct
-          li(data-bespoke-bullet) safer refactoring
-          li(data-bespoke-bullet) reliable components
-          li(data-bespoke-bullet) write better code: reusable, loosely coupled and maintainable
+          li(data-bespoke-bullet) Measurable proof that your code is correct
+          li(data-bespoke-bullet) Safer refactoring
+          li(data-bespoke-bullet) Reliable components
+          li(data-bespoke-bullet) Write better code: reusable, loosely coupled and maintainable
           li(style='font-weight: bold;', data-bespoke-bullet) sleep better at night
+          img(class='no-sleep', src='http://31.media.tumblr.com/ab4f5338a3ae161bbe3ede5436bd9d24/tumblr_mrxr4mctjQ1qmb7u4o8_250.gif', data-bespoke-bullet)
 
 
       section
@@ -178,26 +170,26 @@ html
 
       section
         h2(data-bespoke-bullet) Design
-        p(data-bespoke-bullet) <b>client-server</b> architecture with a bi-directional communication channel between the client and the server
+        p(data-bespoke-bullet) <b>Client-server</b> architecture with a bi-directional communication channel between the client and the server
         img(src="styles/karma-architecture.png", data-bespoke-bullet)
 
 
       section
-        h3(style="text-align: left;") <b>The server</b> is the master part of the system and runs on Node.js on the local machine
+        h3(style="text-align: left;") <b>The server</b> is the master part of the system and runs on Node.js on the local machine.
         ul(style="width: 80%;", data-bespoke-bullet)
-          li(data-bespoke-bullet) watching files
-          li(data-bespoke-bullet) communication with captured clients
-          li(data-bespoke-bullet) reporting test results to the developer
-          li(data-bespoke-bullet) serving all the client code
+          li(data-bespoke-bullet) Watching files
+          li(data-bespoke-bullet) Communication with captured clients
+          li(data-bespoke-bullet) Reporting test results to the developer
+          li(data-bespoke-bullet) Serving all the client code
 
 
       section
-        h3(style="text-align: left;") <b>The client</b> is the place where all the tests are actually executed
+        h3(style="text-align: left;") <b>The client</b> is the place where all the tests are actually executed.
         ul(style="width: 80%;", data-bespoke-bullet)
-          li(data-bespoke-bullet) typically a web browser, a computer, TV, tablet, etc.
-          li(data-bespoke-bullet) runs on the same machine as the server or anything that has HTTP access to the server
-          li(data-bespoke-bullet) communicates with the server through socket.io
-          li(data-bespoke-bullet) executes the tests in an iframe
+          li(data-bespoke-bullet) Typically a web browser, a computer, TV, tablet, etc.
+          li(data-bespoke-bullet) Runs on the same machine as the server or anywhere else provided that it has access To the server through HTTP
+          li(data-bespoke-bullet) Communicates with the server through socket.io
+          li(data-bespoke-bullet) Executes the tests in an iframe
 
 
       section
@@ -238,7 +230,7 @@ html
 
       section
         h2 ngMock
-        p(data-bespoke-bullet) provides some useful mocking tools to test Angular modules
+        p(data-bespoke-bullet) Provides some useful mocking tools to test Angular modules
         p(data-bespoke-bullet) <b>angular.mock.module, angular.mock.inject, $httpBackend</b>
 
       section
@@ -259,7 +251,7 @@ html
         ul(style='margin-top: 1em; width: 70%')
           li(data-bespoke-bullet) Ensures pieces work together
           li(data-bespoke-bullet) Checks if app performs as designed from start to finish
-          li(data-bespoke-bullet) tests user interaction/usability
+          li(data-bespoke-bullet) Tests user interaction/usability
 
         <!-- p(data-bespoke-bullet, style='margin-top: 1em; font-size: 1.3em; line-height: 1.2;') Test whether the flow of an application is performing as designed from start to finish. -->
 
@@ -429,6 +421,28 @@ html
                   element.by(repeater('foo in foos'))
                     .column('foo.bar');
 
+      section
+        h2(data-bespoke-bullet) Page Objects
+        pre(style='margin-top: 1em; font-size: 0.8em;', data-bespoke-bullet)
+          code.language-javascript.
+            var TwitterApp = function () {
+              this.search = function () {
+                return element(by.classModel('search'));
+              };
+              this.tweets = function () {
+                return element(by.repeater('tweet in tweets'));
+              };
+            };
+            module.exports = new TwitterApp();
+
+        pre(style='margin-top: 1em; font-size: 0.7em;', data-bespoke-bullet)
+          code.language-javascript.
+            var app = require('./twitter-app.page.js');
+
+            it('should do something', function () {
+              app.search().sendKeys('codefrontio');
+              // ...
+            });
 
       section
         h1 Debugging
@@ -471,10 +485,11 @@ html
         h2 Demo
 
       section(class='deck-slide')
-        h1(style='margin-top: 2em') Thanks!
+        h1(style='margin-top: 2em', data-bespoke-bullet) Thanks!
         h1(style='margin-top: 0em') Full Spectrum Testing
         p By <a href="http://twitter.com/CarmenPopoviciu">@CarmenPopoviciu</a> and <a href="http://twitter.com/PascalPrecht">@PascalPrecht</a>
         p codefront.io - May 10, 2014
+        img(class='doge', data-bespoke-bullet, src='http://gifs.joelglovier.com/doge/doge.gif')
 
 
       // build:js scripts/scripts.js
