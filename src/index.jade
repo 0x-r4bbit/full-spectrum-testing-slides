@@ -317,7 +317,7 @@ html
               .withCapabilities(wd.Capabilities.chrome())
               .build();
 
-            driver.get('some/url').then(function () {
+            driver.get('some/url');
             driver.findElement(wd.By.name('foo')).sendKeys('webdriver');
             driver.findElement(wd.By.name('btn')).click();
             driver.sleep(400);
@@ -359,7 +359,7 @@ html
               .withCapabilities(wd.Capabilities.chrome())
               .build();
 
-            driver.get('some/url').then(function () {
+            driver.get('some/url');
             driver.findElement(wd.By.name('foo')).sendKeys('webdriver');
             driver.findElement(wd.By.name('btn')).click();
             driver.sleep(400);
@@ -378,12 +378,12 @@ html
               });
 
               it('should do something', function () {
-                var foo = element(by.className('foo');
+                var foo = element(by.className('foo'));
                 expect(foo.isDisplayed()).toBe(true);
               });
 
               it('should do something', function () {
-                element(by.input('search').sendKeys('bar');
+                element(by.input('search')).sendKeys('bar');
                 element(by.buttonText('submit'));
                 expect(element(by.className('search-result')).isDisplayed())
                   .toBe(true);
@@ -462,10 +462,6 @@ html
         pre(data-bespoke-bullet, style='font-size: 0.8em;')
           code.language-javascript.
             $ protractor debug protractor.conf.js
-
-        pre(data-bespoke-bullet, style='font-size: 0.8em;')
-          code.language-javascript.
-            window.clientSideScripts.findInputs('username');
 
       section
         h2(data-bespoke-bullet) Interactive file explorer
