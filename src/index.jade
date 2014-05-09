@@ -74,14 +74,15 @@ html
         h2(style='margin-bottom: 0.5em;') We inspire you with these
         h3(style='width: 80%; text-align: left;') Unit Testing
         ul(style='margin-top: .5em; width: 70%', data-bespoke-bullet)
-          li(data-bespoke-bullet) Karma Testrunner
-          li(data-bespoke-bullet) Jasmine as a DSL
+          li(data-bespoke-bullet, style="font-size: 18px;") Karma Testrunner
+          li(data-bespoke-bullet, style="font-size: 18px;") Jasmine as a DSL
+          li(data-bespoke-bullet, style="font-size: 18px;") Sample test code
 
         h3(style='margin-top: 1em; width: 80%; text-align: left;') E2E Testing
         ul(style='margin-top: .5m; width: 70%')
-          li(data-bespoke-bullet) Protractor
-          li(data-bespoke-bullet) PageObjects
-          li(data-bespoke-bullet) Debugging
+          li(data-bespoke-bullet, style="font-size: 18px;") Protractor
+          li(data-bespoke-bullet, style="font-size: 18px;") PageObjects
+          li(data-bespoke-bullet, style="font-size: 18px;") Debugging
 
       section
         h3 So next time you deploy an app, you don't feel like this...
@@ -187,7 +188,7 @@ html
         h3(style="text-align: left;") <b>The client</b> is the place where all the tests are actually executed.
         ul(style="width: 80%;", data-bespoke-bullet)
           li(data-bespoke-bullet) Typically a web browser, a computer, TV, tablet, etc.
-          li(data-bespoke-bullet) Runs on the same machine as the server or anywhere else provided that it has access To the server through HTTP
+          li(data-bespoke-bullet) Runs on the same machine as the server or anything that has HTTP access to the server
           li(data-bespoke-bullet) Communicates with the server through socket.io
           li(data-bespoke-bullet) Executes the tests in an iframe
 
@@ -234,8 +235,103 @@ html
         p(data-bespoke-bullet) <b>angular.mock.module, angular.mock.inject, $httpBackend</b>
 
       section
-        h2 Demo
-        
+        h2 Examples
+
+      section
+        pre(data-bespoke-bullet, style="font-size: 12px;")
+            code.language-javascript.
+                var app = angular.module('myApp', []);
+                app.controller('MyCtrl', ['$scope', function($scope){
+                    $scope.tweets = [{
+                        text: 'Hello codefront.io'
+                    },{
+                        text: 'codefront.io rocks!'
+                    }];
+                }]);
+        pre(data-bespoke-bullet, style="font-size: 12px;")
+            code.language-javascript.
+                describe("Controller: MyCtrl", function() {
+                    beforeEach(module('myApp'));
+
+                    it("should contain a tweets object on the scope",
+                        inject(function($rootScope, $controller) {
+                            var scope = $rootScope.$new();
+                            var ctrl = $controller('MyCtrl', {'$scope': scope});
+                            expect(scope.tweets).toBeDefined();
+                            expect(scope.tweets.length).toEqual(2);
+                    }));
+                });
+
+
+      section
+          pre(data-bespoke-bullet, style="font-size: 12px;")
+              code.language-javascript.
+                  describe("Controller: MyCtrl", function() {
+                      var scope;
+                      var ctrl;
+
+                      beforeEach(module('myApp'));
+
+                      beforeEach(inject(function($rootScope, $controller) {
+                          scope = $rootScope.$new();
+                          ctrl = $controller('MyCtrl', {
+                              '$scope': scope
+                          });
+                      }));
+
+                      it("should contain a tweets object on the scope", function() {
+                              expect(scope.tweets).toBeDefined();
+                              expect(scope.tweets.length).toEqual(2);
+                      });
+                  });
+
+
+      section
+          pre(data-bespoke-bullet, style="font-size: 12px;")
+              code.language-javascript.
+                  app.service('twitter', TwitterService);
+
+                  app.controller('MyCtrl', ['$scope', 'twitter', function($scope, twitter){
+                      $scope.tweets = twitter.tweets();
+                  }]);
+
+          pre(data-bespoke-bullet, style="font-size: 12px;")
+              code.language-javascript.
+                  function TwitterService() {
+                      this.tweets = function() {
+                          // for the sake of the example
+                          var tweets = [{text: 'codefront.io rocks!'}];
+                          return tweets;
+                      };
+                  }
+
+
+      section
+          pre(data-bespoke-bullet, style="font-size: 12px;")
+            code.language-javascript.
+                describe("Controller: MyCtrl", function() {
+                      var scope;
+                      var ctrl;
+                      var mockService;
+
+                      beforeEach(module('myApp'));
+                      beforeEach(inject(function($rootScope, $controller) {
+                          scope = $rootScope.$new();
+                          mockService = {
+                              tweets: function(){
+                                  return [];
+                              }
+                          };
+                          ctrl = $controller('MyCtrl', {'$scope': scope,
+                              'twitter': mockService
+                          });
+                      }));
+
+                      it("should contain a tweets object on the scope", function() {
+                              expect(scope.tweets).toBeDefined();
+                              expect(scope.tweets.length).toEqual(0);
+                      });
+                  });
       // END UNIT TESTING SECTION --------------------------------------------------------------------------
 
       <!-- section(class='e2e-deck-slide', style='background-image: url(styles/protractor-logo-icon.png)') -->
